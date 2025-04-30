@@ -84,3 +84,58 @@ h1:focus {
         padding-left: env(safe-area-inset-left);
     }
 }
+
+
+
+
+.messages-pane {
+    background-color: #E9F1FB;
+    min-height: 200px;
+    padding: 20px;
+    max-height: 75vh;
+    overflow: auto;
+    margin: -20px -30px;
+}
+
+.messages-box {
+    background-color: #73ABE0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+    .messages-box .thread {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px #333;
+        margin: 10px;
+        padding: 10px;
+        width: 70%;
+    }
+
+.thread-user {
+    border-bottom: 1px solid #CCC;
+}
+
+    .thread-user h4 {
+        display: inline;
+    }
+
+
+.message-to {
+    margin-left: auto !important;
+    background-color: #F8EDED !important;
+}
+
+.message-from {
+    margin-right: auto !important;
+}
+
+.message-new {
+    background-color: #E7F4F0 !important;
+}
+
+.messages-editor {
+    margin-top: 40px;
+    width: 101vw;
+}

@@ -3,14 +3,21 @@
 <h3>Calendar</h3>
 <div id='calendar'></div>
 <script>
-        window.loadCalendar();
+    //Page Load
+    $(function(){
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    });
 </script>
 @code{
 
 
     protected override async void OnInitialized()
     {
-        await jsRT.InvokeVoidAsync("loadCalendar");
+        //await jsRT.InvokeVoidAsync("loadCalendar");
     }
 
 }
