@@ -1,0 +1,164 @@
+﻿.notification-panel {
+    width: 800px;
+    padding: 24px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9fafb;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.mark-read {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.tab {
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    position: relative;
+}
+
+    .tab.active {
+        color: #111;
+    }
+
+.count {
+    background: #d1d5db;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    margin-left: 4px;
+}
+
+    .count.alert {
+        background: #f87171;
+        color: white;
+    }
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.notification-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.content {
+    flex: 1;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.tag {
+    margin-left: 12px;
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+}
+
+.reply-box input {
+    margin-top: 10px;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.actions {
+    margin-top: 12px;
+}
+
+.btn {
+    margin-right: 10px;
+    padding: 6px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+    .btn.approve {
+        background-color: #4ade80;
+        color: white;
+    }
+
+    .btn.reject {
+        background-color: #f87171;
+        color: white;
+    }
+
+.status-label {
+    display: inline-block;
+    background: #e5e7eb;
+    color: #374151;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-right: 8px;
+    font-size: 0.85rem;
+}
+
+    .status-label.active {
+        background: #c7d2fe;
+        color: #4338ca;
+    }
+
+.date-range {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.file-box {
+    background: #f3f4f6;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.size {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
