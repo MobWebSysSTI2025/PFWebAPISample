@@ -1,5 +1,115 @@
 ﻿@page "/messages"
-<h3>Messages</h3>
-@code {
+<head>
+    <link rel="stylesheet" href="css/messageStyle.css">
+</head>
 
+<div class="message-ui">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>Customer Message</h3>
+            <div class="search">
+                <input placeholder="Search" />
+                <button>🔍</button>
+            </div>
+        </div>
+
+        <div class="conversation-list">
+            @foreach (var contact in Contacts)
+            {
+                <div class="conversation @(contact.IsActive ? "active" : "")">
+                    <img src="@contact.Avatar" class="avatar" />
+                    <div class="text">
+                        <div class="name">@contact.Name</div>
+                        <div class="preview">@contact.LastMessage</div>
+                    </div>
+                    <div class="meta">
+                        <div class="time">@contact.Time</div>
+                        @if (contact.Unread)
+                        {
+                            <div class="dot"></div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Main Chat -->
+    <div class="chat-area">
+        <div class="chat-header">
+            <div class="user-info">
+                <img src="a.png" class="avatar" />
+                <div>
+                    <div class="name">Rucas Royal</div>
+                    <div class="subinfo">Surakarta Indonesia | ⭐ 5/5 | 20 Transaction</div>
+                </div>
+            </div>
+            <div class="tools">
+                <input placeholder="Search" />
+                <button>🔔</button>
+                <img src="b.png" class="avatar small" />
+            </div>
+        </div>
+
+        <div class="chat-thread">
+            @foreach (var msg in Messages_)
+            {
+                <div class="message-group @(msg.IsSender ? "right" : "left")">
+                    @if (!msg.IsSender)
+                    {
+                        <div class="meta">@msg.SenderName • @msg.Time</div>
+                    }
+                    <div class="bubble">@msg.Content</div>
+                    @if (msg.IsSender)
+                    {
+                        <div class="meta">@msg.SenderName • @msg.Time</div>
+                    }
+                </div>
+            }
+
+            <div class="date-separator">29 July 2024</div>
+        </div>
+
+        <!-- Typing Area -->
+        <div class="chat-input">
+            <input placeholder="Type your message..." />
+            <button>Send</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    class Contact
+    {
+        public string Name { get; set; }
+        public string LastMessage { get; set; }
+        public string Time { get; set; }
+        public string Avatar { get; set; }
+        public bool IsActive { get; set; }
+        public bool Unread { get; set; }
+    }
+
+    class Message
+    {
+        public string SenderName { get; set; }
+        public string Time { get; set; }
+        public string Content { get; set; }
+        public bool IsSender { get; set; }
+    }
+
+    List<Contact> Contacts = new()
+    {
+        new Contact { Name = "Rucas Royal", LastMessage = "Is this jacket waterproof and wa...", Time = "01:09 am", Avatar = "a.png", IsActive = true, Unread = true },
+        new Contact { Name = "Leslie Alexander", LastMessage = "Do you have any new arrivals...", Time = "01:08 pm", Avatar = "a.png", Unread = true },
+        // Add more...
+    };
+
+    List<Message> Messages_ = new()
+    {
+        new Message { SenderName = "Rucas Royal", Time = "08:24PM", Content = "Is this jacket waterproof and warm?", IsSender = false },
+        new Message { SenderName = "Double CTRL Z", Time = "08:27PM", Content = "Yes, it's both waterproof and warm.", IsSender = true },
+        new Message { SenderName = "Double CTRL Z", Time = "08:28PM", Content = "The jacket is insulated with high-quality down...", IsSender = true },
+        new Message { SenderName = "Rucas Royal", Time = "10:55PM", Content = "Nice! How about the breathability? I don’t want to feel too hot.", IsSender = false },
+    };
 }

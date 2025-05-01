@@ -1,6 +1,81 @@
 ﻿@page "/notifications"
-<h3>Notifications</h3>
+<head>
+    <link rel="stylesheet" href="css/notificationStyle.css">
+</head>
+<div class="notification-panel">
+    <div class="header">
+        <h2>Notification</h2>
+        <button class="mark-read">Mark all as read</button>
+    </div>
 
-@code {
+    <div class="tabs">
+        <span class="tab">Inbox <span class="count">7</span></span>
+        <span class="tab active">Team <span class="count alert">2</span></span>
+        <span class="tab">Read</span>
+    </div>
 
-}
+    <div class="notifications">
+        <!-- Notification 1 -->
+        <div class="notification-card">
+            <img src="a.png" class="avatar" />
+            <div class="content">
+                <div class="meta">
+                    <span class="time">8 hours ago</span>
+                    <span class="tag">New Homepage</span>
+                </div>
+                <p><strong>Ricky</strong> commented on the status of Design project 🔴</p>
+                <div class="reply-box">
+                    <span class="mention">themilo</span> have got the latest draft of homepage and mobile version.
+                    <input placeholder="Reply ricky" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification 2 -->
+        <div class="notification-card">
+            <img src="b.png" class="avatar" />
+            <div class="content">
+                <div class="meta">
+                    <span class="time">1d ago</span>
+                    <span class="tag">New Homepage</span>
+                </div>
+                <p><strong>Milo Piróg</strong> is requesting access</p>
+                <div class="actions">
+                    <button class="btn reject">Reject</button>
+                    <button class="btn approve">Approve</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification 3 -->
+        <div class="notification-card">
+            <img src="a.png" class="avatar" />
+            <div class="content">
+                <div class="meta">
+                    <span class="time">1d ago</span>
+                    <span class="tag">Demo reel video</span>
+                </div>
+                <p><strong>Kamil</strong> updated properties 🎉</p>
+                <div class="status">
+                    <span class="status-label">Backlog</span> ➜ <span class="status-label active">In progress</span>
+                    <div class="date-range">From July 29, 2024 To July 31, 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification 4 -->
+        <div class="notification-card">
+            <img src="b.png" class="avatar" />
+            <div class="content">
+                <div class="meta">
+                    <span class="time">2d ago</span>
+                    <span class="tag">Zero Fin redesign</span>
+                </div>
+                <p><strong>Sonia</strong> uploaded new document</p>
+                <div class="file-box">
+                    📁 Dashboard prototype.mp4 <span class="size">4.2 MB</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
