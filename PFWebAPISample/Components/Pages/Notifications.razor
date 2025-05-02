@@ -1,6 +1,47 @@
 ﻿@page "/notifications"
-<h3>Notifications</h3>
 
-@code {
+<link href="css/notification.css" rel="stylesheet" />
 
-}
+<div class="notification-container">
+    <div class="notification-header">
+        <h3>Notifications</h3>
+    </div>
+    <div class="notification-list">
+        <div class="notification-item">
+            <div class="notification-avatar">
+                <img src="https://static.wikia.nocookie.net/brainrotnew/images/d/df/Anomali_tung_tung_tung.png" alt="Avatar" />
+            </div>
+            <div class="notification-content">
+                <div class="notification-text">
+                    <span class="notification-user">Tung Tung Tung Sahur</span>
+                    <span class="notification-message">Liked your post.</span>
+                </div>
+                <div class="notification-time">@DateTime.Now.ToString("HH:mm")</div>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-avatar">
+                <img src="https://static.wikia.nocookie.net/brainrotnew/images/1/10/Bombardiro_Crocodilo.jpg" alt="Avatar" />
+            </div>
+            <div class="notification-content">
+                <div class="notification-text">
+                    <span class="notification-user">bombardino crocodilo</span>
+                    <span class="notification-message">Commented on your photo.</span>
+                </div>
+                <div class="notification-time">@DateTime.Now.AddMinutes(-10).ToString("HH:mm")</div>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-avatar">
+                <img src="https://static.wikia.nocookie.net/brainrotnew/images/8/8f/Videoframe_2657.png" alt="Avatar" />
+            </div>
+            <div class="notification-content">
+                <div class="notification-text">
+                    <span class="notification-user">Ballerina Cappuccina</span>
+                    <span class="notification-message">Sent you a friend request.</span>
+                </div>
+                <div class="notification-time">@DateTime.Now.AddMinutes(-30).ToString("HH:mm")</div>
+            </div>
+        </div>
+    </div>
+</div>
